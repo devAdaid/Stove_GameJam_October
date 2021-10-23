@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.coffee.ui-effect": "file:../Assets/Plugins/com.coffee.ui-effect-4.0.0-preview.9.tgz",
     "com.unity.2d.animation": "5.0.8",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.psdimporter": "4.1.1",
