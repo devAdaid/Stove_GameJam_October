@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6c3a8ddc271454d9860b84c0ca33ee, type: 3}
   m_Name: Location_Forest
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 6
+  <Id>k__BackingField: 7
   <DisplayName>k__BackingField: "\uC232"
   <BackgroundSprite>k__BackingField: {fileID: 0}
   <StatType>k__BackingField: 6
-  <MonologueText>k__BackingField: 
+  <MonologueText>k__BackingField:
+  - "\uC232\uC5D0\uC11C \uCD94\uB9AC\uB97C \uD558\uAE30 \uC2DC\uC791\uD558\uC600\uB2E4."
+  - "\uC232\uC18D\uC5D0\uC11C \uC0B4\uBA74\uC11C \uC694\uC815\uB4E4\uACFC \uB180\uBA70
+    \uACF5\uBD80 \uAC71\uC815 \uC548\uD558\uACE0 \uC2F6\uB2E4\u2026 \uB098\uB9CC\uC758
+    \uC9D1\uC744 \uAD6C\uD558\uB294 \uC0C1\uC0C1\uC744 \uC8FC\uC81C\uB85C \uD310\uD0C0\uC9C0\uB97C
+    \uC801\uB294\uB2E4."

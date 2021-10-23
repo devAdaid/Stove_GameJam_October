@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6c3a8ddc271454d9860b84c0ca33ee, type: 3}
   m_Name: Location_Toilet
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 1
+  <Id>k__BackingField: 2
   <DisplayName>k__BackingField: "\uD654\uC7A5\uC2E4"
   <BackgroundSprite>k__BackingField: {fileID: 0}
   <StatType>k__BackingField: 1
-  <MonologueText>k__BackingField: 
+  <MonologueText>k__BackingField:
+  - "\uD654\uC7A5\uC2E4\uC5D0\uC11C \uCD94\uB9AC\uB97C \uD558\uAE30 \uC2DC\uC791\uD588\uB2E4.
+    \uAE68\uB057\uD558\uC9C0\uB9CC \uB099\uC11C\uB294 \uB0A8\uC544\uC788\uB2E4"
+  - "\uC77C\uC9C4\uB4E4\uC758 \uB099\uC11C\uAC00 \uBB54\uAC00 \uBA4B\uC788\uC5B4
+    \uBCF4\uC778\uB2E4. \uC561\uC158 \uC904\uAC70\uB9AC\uAC00 \uC0DD\uAC01\uB09C\uB2E4!"

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NPC_Wolf
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 1
-  <DisplayName>k__BackingField: "\uB291\uB300 \uAD50\uC218"
+  <DisplayName>k__BackingField: "\uC6B8\uD504 \uAC15"
   <StandingSprite_Idle>k__BackingField: {fileID: 21300000, guid: ff280101bbd4e4be7a14f92afa20703e, type: 3}
   <StandingSprite_Positive>k__BackingField: {fileID: 21300000, guid: ff280101bbd4e4be7a14f92afa20703e, type: 3}
   <StandingSprite_Negative>k__BackingField: {fileID: 21300000, guid: ff280101bbd4e4be7a14f92afa20703e, type: 3}

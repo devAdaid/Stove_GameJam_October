@@ -23,9 +23,14 @@ public class EventStaticDataRecordOption
     public readonly StatType StandardStatType;
 
     /// <summary>
-    /// 결과 증감 스탯 값
+    /// 성공시 증가 스탯 값
     /// </summary>
-    public readonly StatValue ResultStatValue;
+    public readonly StatValue SuccessResultStatValue;
+
+    /// <summary>
+    /// 실패시 감소 스탯 값
+    /// </summary>
+    public readonly StatValue FailResultStatValue;
 
     public EventStaticDataRecordOption(string optionText, string successReactionText, string failReactionText, StatType standardStatType, StatValue resultStatValue)
     {
@@ -33,7 +38,8 @@ public class EventStaticDataRecordOption
         SucessReactionText = successReactionText;
         FailReactionText = failReactionText;
         StandardStatType = standardStatType;
-        ResultStatValue = resultStatValue;
+        SuccessResultStatValue = resultStatValue;
+        FailResultStatValue = new StatValue(resultStatValue.StatType, -resultStatValue.Value);
     }
 }
 

@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6c3a8ddc271454d9860b84c0ca33ee, type: 3}
   m_Name: Location_Grave
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 2
+  <Id>k__BackingField: 3
   <DisplayName>k__BackingField: "\uACF5\uB3D9\uBB18\uC9C0"
   <BackgroundSprite>k__BackingField: {fileID: 0}
   <StatType>k__BackingField: 2
-  <MonologueText>k__BackingField: 
+  <MonologueText>k__BackingField:
+  - "\uACF5\uB3D9\uBB18\uC9C0\uC5D0\uC11C \uCD94\uB9AC\uB97C \uD558\uAE30 \uC2DC\uC791\uD588\uB2E4."
+  - "\uC0AC\uB77C\uC9C4 \uAD50\uC218\uB2D8\uC758 \uBE48 \uC790\uB9AC\uAC00 \uBB54\uAC00
+    \uAEBC\uB984\uC9C1\uD558\uB2E4\u2026 \uB9C8\uCE58 \uCC28\uB514\uCC2C \uBC14\uB78C\uC774
+    \uBAA9\uC744 \uC870\uB974\uB294\u2026 \uC624, \uC774\uAC70 \uC368\uB3C4 \uC88B\uACA0\uB2E4."

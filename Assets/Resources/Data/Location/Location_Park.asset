@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6c3a8ddc271454d9860b84c0ca33ee, type: 3}
   m_Name: Location_Park
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 4
-  <DisplayName>k__BackingField: "\uACF5"
+  <Id>k__BackingField: 5
+  <DisplayName>k__BackingField: "\uACF5\uC6D0"
   <BackgroundSprite>k__BackingField: {fileID: 0}
   <StatType>k__BackingField: 4
-  <MonologueText>k__BackingField: 
+  <MonologueText>k__BackingField:
+  - "\uACF5\uC6D0\uC5D0\uC11C \uCD94\uB9AC\uB97C \uD558\uAE30 \uC2DC\uC791\uD558\uC600\uB2E4."
+  - "\uCD94\uB9AC\uB97C \uD558\uB824\uACE0 \uC654\uC9C0\uB9CC \uB118\uCE58\uB294
+    \uCEE4\uD50C\uB4E4\u2026 \uC678\uB85C\uC6B4 \uB9C8\uC74C\uC778\uC9C0 \uAD50\uC218\uB2D8\uC740
+    \uACB0\uD63C\uD588\uB098\uB97C \uC0DD\uAC01\uD558\uAC8C \uB418\uC5C8\uB2E4. \uBC18\uC9C0
+    \uB07C\uACE0 \uACC4\uC168\uC130\uB098\u2026?"

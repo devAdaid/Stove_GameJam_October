@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NPC_Vampyr
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 5
-  <DisplayName>k__BackingField: "\uBC40\uD30C\uC774\uC5B4"
+  <DisplayName>k__BackingField: "\uC544\uC774\uC791"
   <StandingSprite_Idle>k__BackingField: {fileID: 21300000, guid: ff280101bbd4e4be7a14f92afa20703e, type: 3}
   <StandingSprite_Positive>k__BackingField: {fileID: 21300000, guid: ff280101bbd4e4be7a14f92afa20703e, type: 3}
   <StandingSprite_Negative>k__BackingField: {fileID: 21300000, guid: ff280101bbd4e4be7a14f92afa20703e, type: 3}

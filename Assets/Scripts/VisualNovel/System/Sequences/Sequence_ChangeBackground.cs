@@ -1,11 +1,31 @@
 public class Sequence_ChangeBackground : VisualNovelSequence
 {
-    public Sequence_ChangeBackground(IVisualNovelAPI api) : base(api)
+    public override bool NeedWait => false;
+
+    private LocationType _location;
+
+    public Sequence_ChangeBackground(IVisualNovelAPI api, LocationType location) : base(api)
     {
+        _location = location;
     }
 
     public override void Execute()
     {
-        _api.ChangeBackground(null);
+        if (_location == LocationType.Invalid)
+        {
+            if (_api.IsBackgroundVisible)
+            {
+                _api.HideBackground();
+            }
+        }
+        else
+        {
+            if (!_api.IsBackgroundVisible)
+            {
+                var locationData = Global.Locations.GetData(_location);
+                _api.ShowBackground();
+                _api.SetBackground(locationData.BackgroundSprite);
+            }
+        }
     }
 }
