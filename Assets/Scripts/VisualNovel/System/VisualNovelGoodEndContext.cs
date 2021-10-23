@@ -57,7 +57,7 @@ public class VisualNovelGoodEndContext : IVisualNovelContext
 
     private void OnEnd()
     {
-        SceneManager.LoadScene("1_Title");
+        SceneManager.LoadScene("3_End");
     }
 
     public bool CanSelectOption()
