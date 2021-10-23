@@ -1,5 +1,10 @@
 public static class Global
 {
+    public static VisualNovelUIControl UI => GlobalHolder.Instance.UI;
+    public static VisualNovelAPI API => GlobalHolder.Instance.VisualNovelAPI;
+
+    public static PlayerHolder Player => GlobalHolder.Instance.Player;
+
     public static EventStaticDataHolder Events => GlobalHolder.Instance.Events;
     public static NPCStaticDataHolder NPCs => GlobalHolder.Instance.NPCs;
     public static LocationStaticDataHolder Locations => GlobalHolder.Instance.Locations;

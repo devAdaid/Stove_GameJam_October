@@ -15,5 +15,5 @@ MonoBehaviour:
   <Id>k__BackingField: 5
   <DisplayName>k__BackingField: "\uC544\uC774\uC791"
   <StandingSprite_Idle>k__BackingField: {fileID: 21300000, guid: 3c6e87f004e0b4a4c9815119354f1083, type: 3}
-  <StandingSprite_Positive>k__BackingField: {fileID: 21300000, guid: 3c6e87f004e0b4a4c9815119354f1083, type: 3}
-  <StandingSprite_Negative>k__BackingField: {fileID: 21300000, guid: 3c6e87f004e0b4a4c9815119354f1083, type: 3}
+  <StandingSprite_Positive>k__BackingField: {fileID: 21300000, guid: 2ae9dd81b77b84915a1e9d8af5690015, type: 3}
+  <StandingSprite_Negative>k__BackingField: {fileID: 21300000, guid: e0ab8f7bad7714e57aba7a613cef77bc, type: 3}

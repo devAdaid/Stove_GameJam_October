@@ -21,7 +21,7 @@ public class EventStaticDataHolder
 
         // 1일차 - 2개
         var day1 = GetDataListByDayRange(DayRangeType.Day1);
-        RandomEx.Shuffle(day1);
+        day1 = RandomEx.Shuffle(day1);
         for (int i = 0; i < 2; i++)
         {
             result.Add(day1[i]);
@@ -29,7 +29,7 @@ public class EventStaticDataHolder
 
         // 2~3일차 - 4개
         var day2to3 = GetDataListByDayRange(DayRangeType.Day2to3);
-        RandomEx.Shuffle(day2to3);
+        day2to3 = RandomEx.Shuffle(day2to3);
         for (int i = 0; i < 4; i++)
         {
             result.Add(day2to3[i]);
@@ -37,7 +37,7 @@ public class EventStaticDataHolder
 
         // 4일차 - 2개
         var day4 = GetDataListByDayRange(DayRangeType.Day4);
-        RandomEx.Shuffle(day4);
+        day4 = RandomEx.Shuffle(day4);
         for (int i = 0; i < 2; i++)
         {
             result.Add(day4[i]);

@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Work/Ahyeong.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/1_Title.unity
+    guid: 2f7c350c9a0a64fc384f46cbdcb0d3df
+  - enabled: 1
+    path: Assets/Scenes/2_Game.unity
+    guid: 773a5e8599b01432083cb966fb979392
+  - enabled: 1
+    path: Assets/Scenes/3_End.unity
+    guid: c902e6183d7b844759af84f6420421e7
   m_configObjects: {}

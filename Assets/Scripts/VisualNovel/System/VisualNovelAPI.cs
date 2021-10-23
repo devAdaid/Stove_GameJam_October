@@ -11,7 +11,7 @@ public class VisualNovelAPI : IVisualNovelAPI
     private bool _isNPCStandingVisible = false;
 
     private readonly VisualNovelUIControl ui;
-    private readonly VisualNovelContext context;
+    private VisualNovelContext context;
 
     public VisualNovelAPI(VisualNovelUIControl uIControl, VisualNovelContext novelContext)
     {
@@ -21,6 +21,11 @@ public class VisualNovelAPI : IVisualNovelAPI
         ui.InputBlockButton.onClick.AddListener(Advance);
         ui.Option1Button.onClick.AddListener(() => SelectOption(1));
         ui.Option2Button.onClick.AddListener(() => SelectOption(2));
+    }
+
+    public void SetContext(VisualNovelContext novelContext)
+    {
+        context = novelContext;
     }
 
     public bool IsTextWindowVisible => _isTextWindowVisible;
@@ -51,13 +56,12 @@ public class VisualNovelAPI : IVisualNovelAPI
 
     public void ApplyResultStat(StatValue statValue)
     {
-        // TODO
+        Global.Player.Stat.AddStat(statValue);
     }
 
     public int GetCurrentStatValue(StatType stat)
     {
-        // TODO
-        return 0;
+        return Global.Player.Stat.GetStat(stat);
     }
 
     public void HideBackground()
@@ -133,5 +137,25 @@ public class VisualNovelAPI : IVisualNovelAPI
         ui.Option1Text.text = option1;
         ui.Option2Text.text = option2;
         ui.OptionButtonRoot.SetActive(true);
+    }
+
+    public void ShowLocationSelectUI()
+    {
+        ui.LocationSelectUI.gameObject.SetActive(true);
+    }
+
+    public void HideLocationSelectUI()
+    {
+        ui.LocationSelectUI.gameObject.SetActive(false);
+    }
+
+    public void UpdateLocationSelectUI()
+    {
+        ui.LocationSelectUI.UpdateUI();
+    }
+
+    public void SetInputBlockerEnable(bool enable)
+    {
+        ui.InputBlockButton.gameObject.SetActive(enable);
     }
 }

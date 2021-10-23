@@ -2,6 +2,9 @@ using UnityEngine;
 
 public interface IVisualNovelAPI
 {
+    void ShowLocationSelectUI();
+    void HideLocationSelectUI();
+
     bool IsTextWindowVisible { get; }
     void ShowTextWindow();
     void HideTextWindow();
@@ -30,4 +33,6 @@ public interface IVisualNovelAPI
 
     void ShowOptions(string option1, string option2);
     void SelectOption(int option);
+
+    void SetInputBlockerEnable(bool enable);
 }

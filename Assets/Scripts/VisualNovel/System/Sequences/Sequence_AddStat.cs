@@ -11,6 +11,6 @@ public class Sequence_AddStat : VisualNovelSequence
 
     public override void Execute()
     {
-        // TODO
+        _api.ApplyResultStat(_statValue);
     }
 }

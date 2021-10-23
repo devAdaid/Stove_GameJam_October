@@ -12,6 +12,6 @@ public class VisualNovelTest : MonoBehaviour
     {
         var locationData = Global.Locations.GetData(Location);
         var eventData = Global.Events.GetDataById(EventId);
-        context = new VisualNovelContext(ui, locationData, eventData);
+        //context = new VisualNovelContext(Global.API, ui, locationData, eventData, null);
     }
 }

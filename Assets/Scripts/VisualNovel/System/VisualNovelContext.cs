@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,15 +26,21 @@ public class VisualNovelContext
 
     private readonly List<IVisualNovelSequence> _eventEndSequence;
 
-    private readonly IVisualNovelAPI api;
+    private readonly VisualNovelAPI _api;
+    private readonly Action _onEnd;
 
     private VisualNovelSequenceGroupType _currentSequenceGroup;
     private List<IVisualNovelSequence> _currentSequence;
     private int _currentSequenceIndex;
 
-    public VisualNovelContext(VisualNovelUIControl uiControl, LocationStaticDataRecord locationData, EventStaticDataRecord eventData)
+    public VisualNovelContext(VisualNovelAPI api, VisualNovelUIControl uiControl, LocationStaticDataRecord locationData, EventStaticDataRecord eventData, int standardStatValue, Action onEnd)
     {
-        api = new VisualNovelAPI(uiControl, this);
+        _api = api;
+        _api.SetContext(this);
+        _onEnd = onEnd;
+
+        _api.SetInputBlockerEnable(true);
+        _api.HideLocationSelectUI();
 
         _locationSequence = new List<IVisualNovelSequence>();
         _eventStartSequence = new List<IVisualNovelSequence>();
@@ -42,6 +49,9 @@ public class VisualNovelContext
         _option2SuccessSequece = new List<IVisualNovelSequence>();
         _option2FailSequece = new List<IVisualNovelSequence>();
         _eventEndSequence = new List<IVisualNovelSequence>();
+
+        _option1StandardStatValue = new StatValue(eventData.Option1.StandardStatType, standardStatValue);
+        _option2StandardStatValue = new StatValue(eventData.Option2.StandardStatType, standardStatValue);
 
         MakeLocationSequences(locationData);
         MakeEventSequences(eventData);
@@ -71,7 +81,7 @@ public class VisualNovelContext
         switch (option)
         {
             case 1:
-                currentStat = api.GetCurrentStatValue(_option1StandardStatValue.StatType);
+                currentStat = _api.GetCurrentStatValue(_option1StandardStatValue.StatType);
                 if (currentStat >= _option1StandardStatValue.Value)
                 {
                     _currentSequenceGroup = VisualNovelSequenceGroupType.EventOption;
@@ -86,7 +96,7 @@ public class VisualNovelContext
                 }
                 break;
             case 2:
-                currentStat = api.GetCurrentStatValue(_option2StandardStatValue.StatType);
+                currentStat = _api.GetCurrentStatValue(_option2StandardStatValue.StatType);
                 if (currentStat >= _option2StandardStatValue.Value)
                 {
                     _currentSequenceGroup = VisualNovelSequenceGroupType.EventOption;
@@ -107,25 +117,25 @@ public class VisualNovelContext
 
     private void MakeLocationSequences(LocationStaticDataRecord locationData)
     {
-        _locationSequence.Add(new Sequence_ChangeBackground(api, locationData.Id));
+        _locationSequence.Add(new Sequence_ChangeBackground(_api, locationData.Id));
 
         foreach (var text in locationData.MonologueText)
         {
-            _locationSequence.Add(new Sequence_MonologueText(api, text));
+            _locationSequence.Add(new Sequence_MonologueText(_api, text));
         }
 
-        _locationSequence.Add(new Sequence_AddStat(api, new StatValue(locationData.StatType, 1)));
+        _locationSequence.Add(new Sequence_AddStat(_api, new StatValue(locationData.StatType, 1)));
     }
 
     private void MakeEventSequences(EventStaticDataRecord eventData)
     {
         // Event Start Sequence
-        _eventStartSequence.Add(new Sequence_ChangeNPCStanding(api, eventData.NPC, EmotionType.Idle));
+        _eventStartSequence.Add(new Sequence_ChangeNPCStanding(_api, eventData.NPC, EmotionType.Idle));
         foreach (var text in eventData.DialogueTexts)
         {
-            _eventStartSequence.Add(new Sequence_NPCDialogueText(api, eventData.NPC, text));
+            _eventStartSequence.Add(new Sequence_NPCDialogueText(_api, eventData.NPC, text));
         }
-        _eventStartSequence.Add(new Sequence_ShowOption(api, eventData.Option1.OptionText, eventData.Option2.OptionText));
+        _eventStartSequence.Add(new Sequence_ShowOption(_api, eventData.Option1.OptionText, eventData.Option2.OptionText));
 
         // Event End Sequence
         // TODO
@@ -135,14 +145,14 @@ public class VisualNovelContext
     private void MakeOptionSequence(EventStaticDataRecordOption optionData, NPCType npc, List<IVisualNovelSequence> successList, List<IVisualNovelSequence> failList)
     {
         // Success
-        successList.Add(new Sequence_ChangeNPCStanding(api, npc, EmotionType.Positive));
-        successList.Add(new Sequence_NPCDialogueText(api, npc, optionData.SucessReactionText));
-        successList.Add(new Sequence_AddStat(api, optionData.SuccessResultStatValue));
+        successList.Add(new Sequence_ChangeNPCStanding(_api, npc, EmotionType.Positive));
+        successList.Add(new Sequence_NPCDialogueText(_api, npc, optionData.SucessReactionText));
+        successList.Add(new Sequence_AddStat(_api, optionData.SuccessResultStatValue));
 
         // Fail
-        failList.Add(new Sequence_ChangeNPCStanding(api, npc, EmotionType.Negative));
-        failList.Add(new Sequence_NPCDialogueText(api, npc, optionData.FailReactionText));
-        failList.Add(new Sequence_AddStat(api, optionData.FailResultStatValue));
+        failList.Add(new Sequence_ChangeNPCStanding(_api, npc, EmotionType.Negative));
+        failList.Add(new Sequence_NPCDialogueText(_api, npc, optionData.FailReactionText));
+        failList.Add(new Sequence_AddStat(_api, optionData.FailResultStatValue));
     }
 
     private void ExecuteUntilWatingSequence()
@@ -184,7 +194,24 @@ public class VisualNovelContext
                 _currentSequence = _eventEndSequence;
                 _currentSequenceIndex = 0;
                 return true;
+            case VisualNovelSequenceGroupType.EventEnd:
+                OnEnd();
+                return false;
         }
         return false;
+    }
+
+    private void OnEnd()
+    {
+        var mapSprite = Global.Locations.GetData(LocationType.Map).BackgroundSprite;
+        _api.SetBackground(mapSprite);
+        _api.HideNPCStanding();
+        _api.HideTextWindow();
+
+        _api.SetInputBlockerEnable(false);
+        _api.ShowLocationSelectUI();
+        _api.UpdateLocationSelectUI();
+
+        _onEnd?.Invoke();
     }
 }

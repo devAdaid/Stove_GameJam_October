@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class VisualNovelUIControl : MonoBehaviour
 {
+    public LocationSelectUI LocationSelectUI;
+
     public Image BackgroundImage;
     public Image NpcStandingImage;
     public TMP_Text NameText;
@@ -22,6 +24,7 @@ public class VisualNovelUIControl : MonoBehaviour
     void Awake()
     {
         //BackgroundImage.gameObject.SetActive(false);
+        InputBlockButton.gameObject.SetActive(false);
         NPCStandingRoot.SetActive(false);
         NamePlateRoot.SetActive(false);
         TextWindowRoot.SetActive(false);
