@@ -1,18 +1,18 @@
-public class GlobalHolder : Singleton<GlobalHolder>
+public class GlobalHolder : MonoSingleton<GlobalHolder>
 {
-    public readonly VisualNovelAPI VisualNovelAPI;
+    public VisualNovelAPI VisualNovelAPI;
 
     // Static Data
-    public readonly EventStaticDataHolder Events;
-    public readonly NPCStaticDataHolder NPCs;
-    public readonly LocationStaticDataHolder Locations;
-    public readonly StatStaticDataHolder Stats;
-    public readonly KRStringHolder KRStrings;
+    public EventStaticDataHolder Events;
+    public NPCStaticDataHolder NPCs;
+    public LocationStaticDataHolder Locations;
+    public StatStaticDataHolder Stats;
+    public KRStringHolder KRStrings;
 
     // Player
-    public readonly PlayerHolder Player;
+    public PlayerHolder Player;
 
-    public GlobalHolder()
+    void Awake()
     {
         VisualNovelAPI = new VisualNovelAPI(null);
 

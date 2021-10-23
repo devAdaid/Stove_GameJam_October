@@ -33,9 +33,9 @@ public class VisualNovelBadEndContext : IVisualNovelContext
     {
         ExecuteUntilWatingSequence();
     }
-
     private void ExecuteUntilWatingSequence()
     {
+        var count = 1;
         bool needWait = false;
         while (!needWait)
         {
@@ -45,12 +45,18 @@ public class VisualNovelBadEndContext : IVisualNovelContext
                 sequnce.Execute();
                 needWait = sequnce.NeedWait;
                 _currentSequenceIndex += 1;
+                count += 1;
             }
             else
             {
                 OnEnd();
                 break;
             }
+        }
+
+        if (count > 0)
+        {
+            SoundManager.Instance.PlaySfx("Advance");
         }
     }
 
