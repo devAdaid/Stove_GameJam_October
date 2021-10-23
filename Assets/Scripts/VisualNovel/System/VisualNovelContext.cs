@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public enum VisualNovelSequenceGroupType
 {
@@ -178,7 +177,6 @@ public class VisualNovelContext : IVisualNovelContext
                 var sequnce = _currentSequence[_currentSequenceIndex];
                 sequnce.Execute();
                 needWait = sequnce.NeedWait;
-                Debug.Log($"{_currentSequenceGroup}, {_currentSequenceIndex}");
                 _currentSequenceIndex += 1;
             }
             else
