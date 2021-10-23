@@ -29,7 +29,6 @@ public class VisualNovelUIControl : MonoBehaviour
         NPCStandingRoot.SetActive(false);
         NamePlateRoot.SetActive(false);
         TextWindowRoot.SetActive(false);
-        OptionButtonRoot.SetActive(false);
         TextArrowRoot.SetActive(false);
 
         TextTyper.PrintCompleted.AddListener(() => TextArrowRoot.SetActive(true));

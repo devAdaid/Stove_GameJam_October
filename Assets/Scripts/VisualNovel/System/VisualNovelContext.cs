@@ -70,9 +70,14 @@ public class VisualNovelContext
         ExecuteUntilWatingSequence();
     }
 
+    public bool CanSelectOption()
+    {
+        return _currentSequenceGroup == VisualNovelSequenceGroupType.EventStart;
+    }
+
     public void SelectOption(int option)
     {
-        if (_currentSequenceGroup != VisualNovelSequenceGroupType.EventStart)
+        if (!CanSelectOption())
         {
             return;
         }

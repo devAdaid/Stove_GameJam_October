@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class VisualNovelAPI : IVisualNovelAPI
@@ -50,7 +51,15 @@ public class VisualNovelAPI : IVisualNovelAPI
 
     public void SelectOption(int option)
     {
-        ui.OptionButtonRoot.SetActive(false);
+        if (!context.CanSelectOption())
+        {
+            return;
+        }
+
+        var buttonSequence = DOTween.Sequence();
+        buttonSequence.Append(ui.Option1Button.transform.DOLocalMoveX(650f, 0.3f));
+        buttonSequence.Insert(0.1f, ui.Option2Button.transform.DOLocalMoveX(700f, 0.3f));
+        buttonSequence.Play();
         context.SelectOption(option);
     }
 
@@ -135,9 +144,12 @@ public class VisualNovelAPI : IVisualNovelAPI
 
     public void ShowOptions(string option1, string option2)
     {
+        var buttonSequence = DOTween.Sequence();
+        buttonSequence.Append(ui.Option1Button.transform.DOLocalMoveX(-50f, 0.3f));
+        buttonSequence.Insert(0.1f, ui.Option2Button.transform.DOLocalMoveX(-100f, 0.3f));
+        buttonSequence.Play();
         ui.Option1Text.text = option1;
         ui.Option2Text.text = option2;
-        ui.OptionButtonRoot.SetActive(true);
     }
 
     public void ShowLocationSelectUI()
