@@ -9,6 +9,7 @@ public class GlobalHolder : Singleton<GlobalHolder>
     public readonly EventStaticDataHolder Events;
     public readonly NPCStaticDataHolder NPCs;
     public readonly LocationStaticDataHolder Locations;
+    public readonly KRStringHolder KRStrings;
 
     // Player
     public readonly PlayerHolder Player;
@@ -21,6 +22,7 @@ public class GlobalHolder : Singleton<GlobalHolder>
         Events = new EventStaticDataHolder();
         NPCs = new NPCStaticDataHolder();
         Locations = new LocationStaticDataHolder();
+        KRStrings = new KRStringHolder();
 
         var events = Events.GetRandomList();
         Player = new PlayerHolder(events);
