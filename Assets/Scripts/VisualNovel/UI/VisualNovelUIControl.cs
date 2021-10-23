@@ -20,6 +20,7 @@ public class VisualNovelUIControl : MonoBehaviour
     public GameObject TextWindowRoot;
     public GameObject NamePlateRoot;
     public GameObject NPCStandingRoot;
+    public GameObject TextArrowRoot;
 
     void Awake()
     {
@@ -29,5 +30,8 @@ public class VisualNovelUIControl : MonoBehaviour
         NamePlateRoot.SetActive(false);
         TextWindowRoot.SetActive(false);
         OptionButtonRoot.SetActive(false);
+        TextArrowRoot.SetActive(false);
+
+        TextTyper.PrintCompleted.AddListener(() => TextArrowRoot.SetActive(true));
     }
 }

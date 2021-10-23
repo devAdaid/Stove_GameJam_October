@@ -1441,46 +1441,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 281934168}
     m_Modifications:
-    - target: {fileID: 2223565098219705997, guid: 529171fd6c89840709d265368168dbef, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223565098219705997, guid: 529171fd6c89840709d265368168dbef, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223565098219705997, guid: 529171fd6c89840709d265368168dbef, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223565098219705997, guid: 529171fd6c89840709d265368168dbef, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223565098219705997, guid: 529171fd6c89840709d265368168dbef, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223565099073107056, guid: 529171fd6c89840709d265368168dbef, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223565099073107056, guid: 529171fd6c89840709d265368168dbef, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223565099073107056, guid: 529171fd6c89840709d265368168dbef, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223565099073107056, guid: 529171fd6c89840709d265368168dbef, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2223565099073107056, guid: 529171fd6c89840709d265368168dbef, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2223565099310983761, guid: 529171fd6c89840709d265368168dbef, type: 3}
       propertyPath: BackgroundImage
       value: 

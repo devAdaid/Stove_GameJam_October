@@ -129,6 +129,7 @@ public class VisualNovelAPI : IVisualNovelAPI
 
     public void TypeText(string text)
     {
+        ui.TextArrowRoot.SetActive(false);
         ui.TextTyper.TypeText(text);
     }
 
