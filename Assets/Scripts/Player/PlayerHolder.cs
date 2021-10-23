@@ -19,6 +19,15 @@ public class PlayerHolder
         _events = events;
     }
 
+    public void Reset()
+    {
+        CurrentTurn = 0;
+        Stat.Reset();
+
+        _events.Clear();
+        _events.AddRange(Global.Events.GetRandomList());
+    }
+
     public void VisitLocation(LocationType location)
     {
         if (_isNovelPlaying)

@@ -1,6 +1,6 @@
 public static class Global
 {
-    public static VisualNovelUIControl UI => GlobalHolder.Instance.UI;
+    public static VisualNovelUIControl UI => VisualNovelUIControl.Instance;
     public static VisualNovelAPI API => GlobalHolder.Instance.VisualNovelAPI;
 
     public static PlayerHolder Player => GlobalHolder.Instance.Player;

@@ -15,6 +15,16 @@ public class PlayerStat
         _stats.Add(StatType.Horror, 0);
     }
 
+    public void Reset()
+    {
+        _stats[StatType.Action] = 0;
+        _stats[StatType.Detective] = 0;
+        _stats[StatType.Fantasy] = 0;
+        _stats[StatType.Romance] = 0;
+        _stats[StatType.OrientalFantasy] = 0;
+        _stats[StatType.Horror] = 0;
+    }
+
     public int GetStat(StatType stat)
     {
         return _stats[stat];

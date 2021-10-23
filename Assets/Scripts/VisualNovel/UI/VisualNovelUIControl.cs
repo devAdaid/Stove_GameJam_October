@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VisualNovelUIControl : MonoBehaviour
+public class VisualNovelUIControl : MonoSingleton<VisualNovelUIControl>
 {
     public LocationSelectUI LocationSelectUI;
 

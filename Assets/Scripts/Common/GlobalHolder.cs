@@ -1,8 +1,5 @@
-using UnityEngine;
-
 public class GlobalHolder : Singleton<GlobalHolder>
 {
-    public readonly VisualNovelUIControl UI;
     public readonly VisualNovelAPI VisualNovelAPI;
 
     // Static Data
@@ -17,8 +14,7 @@ public class GlobalHolder : Singleton<GlobalHolder>
 
     public GlobalHolder()
     {
-        UI = GameObject.FindObjectOfType<VisualNovelUIControl>();
-        VisualNovelAPI = new VisualNovelAPI(UI, null);
+        VisualNovelAPI = new VisualNovelAPI(null);
 
         Events = new EventStaticDataHolder();
         NPCs = new NPCStaticDataHolder();

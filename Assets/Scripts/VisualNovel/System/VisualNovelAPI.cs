@@ -11,12 +11,11 @@ public class VisualNovelAPI : IVisualNovelAPI
 
     private bool _isNPCStandingVisible = false;
 
-    private readonly VisualNovelUIControl ui;
+    private VisualNovelUIControl ui => VisualNovelUIControl.Instance;
     private VisualNovelContext context;
 
-    public VisualNovelAPI(VisualNovelUIControl uIControl, VisualNovelContext novelContext)
+    public VisualNovelAPI(VisualNovelContext novelContext)
     {
-        ui = uIControl;
         context = novelContext;
 
         ui.InputBlockButton.onClick.AddListener(Advance);

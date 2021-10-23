@@ -12,6 +12,6 @@ public class StatEntry : MonoBehaviour
     public void SetEntry(Sprite iconSprite, string statName, int value)
     {
         _icon.sprite = iconSprite;
-        _statText.text = $"{statName} - {value}";
+        _statText.text = $"{statName}: {value}";
     }
 }
