@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 2223565098219705994}
   - component: {fileID: 2223565098219705995}
   - component: {fileID: 2223565098219705996}
+  - component: {fileID: 8058582984637507660}
   m_Layer: 5
   m_Name: Option2
   m_TagString: Untagged
@@ -272,8 +273,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.22352941, b: 0.22352941, a: 1}
+    m_PressedColor: {r: 0.6698113, g: 0.072668225, b: 0.072668225, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -294,6 +295,32 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8058582984637507660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2223565098219705998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 0
+  m_Width: 0.157
+  m_Rotation: 135
+  m_Softness: 1
+  m_Brightness: 0.421
+  m_Gloss: 0.436
+  m_EffectArea: 0
+  m_Player:
+    play: 1
+    initialPlayDelay: 1
+    duration: 1
+    loop: 1
+    loopDelay: 2
+    updateMode: 0
 --- !u!1 &2223565098381616653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1069,7 @@ GameObject:
   - component: {fileID: 2223565099073107069}
   - component: {fileID: 2223565099073107070}
   - component: {fileID: 2223565099073107071}
+  - component: {fileID: 8601079571692327468}
   m_Layer: 5
   m_Name: Option1
   m_TagString: Untagged
@@ -1129,8 +1157,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.22352941, b: 0.22352941, a: 1}
+    m_PressedColor: {r: 0.6698113, g: 0.072668225, b: 0.072668225, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1151,6 +1179,32 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8601079571692327468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2223565099073107057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 0
+  m_Width: 0.157
+  m_Rotation: 135
+  m_Softness: 1
+  m_Brightness: 0.421
+  m_Gloss: 0.436
+  m_EffectArea: 0
+  m_Player:
+    play: 1
+    initialPlayDelay: 1
+    duration: 1
+    loop: 1
+    loopDelay: 2
+    updateMode: 0
 --- !u!1 &2223565099310983763
 GameObject:
   m_ObjectHideFlags: 0

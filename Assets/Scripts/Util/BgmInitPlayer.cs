@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BgmInitPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public string bgmName;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SoundManager.Instance.PlayBgm(bgmName);
     }
 }

@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 980933065}
   - component: {fileID: 980933068}
   - component: {fileID: 980933067}
+  - component: {fileID: 980933069}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -418,6 +419,44 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 980933067}
+        m_TargetAssemblyTypeName: ButtonUtil, Assembly-CSharp
+        m_MethodName: PlayButtonSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &980933069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980933063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 0
+  m_Width: 0.157
+  m_Rotation: 135
+  m_Softness: 1
+  m_Brightness: 0.421
+  m_Gloss: 0.436
+  m_EffectArea: 0
+  m_Player:
+    play: 1
+    initialPlayDelay: 1
+    duration: 1
+    loop: 1
+    loopDelay: 2
+    updateMode: 0
 --- !u!1 &1148168517
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +470,7 @@ GameObject:
   - component: {fileID: 1148168519}
   - component: {fileID: 1148168522}
   - component: {fileID: 1148168521}
+  - component: {fileID: 1148168523}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -564,6 +604,44 @@ MonoBehaviour:
           m_StringArgument: 2_Game
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 980933067}
+        m_TargetAssemblyTypeName: ButtonUtil, Assembly-CSharp
+        m_MethodName: PlayButtonSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 2_Game
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1148168523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148168517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 0
+  m_Width: 0.157
+  m_Rotation: 135
+  m_Softness: 1
+  m_Brightness: 0.421
+  m_Gloss: 0.436
+  m_EffectArea: 0
+  m_Player:
+    play: 1
+    initialPlayDelay: 1
+    duration: 1
+    loop: 1
+    loopDelay: 2
+    updateMode: 0
 --- !u!1 &1358108246
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +654,7 @@ GameObject:
   - component: {fileID: 1358108249}
   - component: {fileID: 1358108248}
   - component: {fileID: 1358108250}
+  - component: {fileID: 1358108251}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -661,11 +740,30 @@ MonoBehaviour:
   m_EffectArea: 0
   m_Player:
     play: 1
-    initialPlayDelay: 0
+    initialPlayDelay: 0.5
     duration: 1
     loop: 1
     loopDelay: 2
     updateMode: 0
+--- !u!95 &1358108251
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358108246}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8100fdc88128b445a981d1f3fcc3eabe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1419607631
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +1069,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -293}
   m_SizeDelta: {x: 600, y: 340}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2043402309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2043402311}
+  - component: {fileID: 2043402310}
+  m_Layer: 0
+  m_Name: BgmInitPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2043402310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043402309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5a00bdc81fb45f1b280cfe5556e7e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmName: Title
+--- !u!4 &2043402311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043402309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &50521736379875611
 RectTransform:
   m_ObjectHideFlags: 0

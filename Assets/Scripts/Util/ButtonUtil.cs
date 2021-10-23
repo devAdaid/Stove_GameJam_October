@@ -16,4 +16,9 @@ public class ButtonUtil : MonoBehaviour
             Application.Quit();
 #endif
     }
+
+    public void PlayButtonSfx()
+    {
+        SoundManager.Instance.PlaySfx("Click");
+    }
 }

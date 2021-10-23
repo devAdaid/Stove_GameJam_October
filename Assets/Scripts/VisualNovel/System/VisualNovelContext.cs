@@ -92,6 +92,7 @@ public class VisualNovelContext : IVisualNovelContext
                     _currentSequenceGroup = VisualNovelSequenceGroupType.EventOption;
                     _currentSequence = _option1SuccessSequece;
                     _currentSequenceIndex = 0;
+                    SoundManager.Instance.PlaySfx("Success");
                 }
                 else
                 {
@@ -107,6 +108,7 @@ public class VisualNovelContext : IVisualNovelContext
                     _currentSequenceGroup = VisualNovelSequenceGroupType.EventOption;
                     _currentSequence = _option2SuccessSequece;
                     _currentSequenceIndex = 0;
+                    SoundManager.Instance.PlaySfx("Success");
                 }
                 else
                 {
@@ -170,6 +172,7 @@ public class VisualNovelContext : IVisualNovelContext
 
     private void ExecuteUntilWatingSequence()
     {
+        var count = 0;
         bool needWait = false;
         while (!needWait)
         {
@@ -179,6 +182,7 @@ public class VisualNovelContext : IVisualNovelContext
                 sequnce.Execute();
                 needWait = sequnce.NeedWait;
                 _currentSequenceIndex += 1;
+                count += 1;
             }
             else
             {
@@ -187,6 +191,11 @@ public class VisualNovelContext : IVisualNovelContext
                     break;
                 }
             }
+        }
+
+        if (count > 0)
+        {
+            SoundManager.Instance.PlaySfx("Advance");
         }
     }
 

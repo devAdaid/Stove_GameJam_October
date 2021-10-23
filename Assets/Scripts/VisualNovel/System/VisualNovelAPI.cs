@@ -64,6 +64,15 @@ public class VisualNovelAPI : IVisualNovelAPI
 
     public void ApplyResultStat(StatValue statValue)
     {
+        if (statValue.Value > 0)
+        {
+            SoundManager.Instance.PlaySfx("StatUp");
+        }
+        else if (statValue.Value < 0)
+        {
+            SoundManager.Instance.PlaySfx("StatDown");
+        }
+
         Global.Player.Stat.AddStat(statValue);
         UpdateSimpleStats();
     }

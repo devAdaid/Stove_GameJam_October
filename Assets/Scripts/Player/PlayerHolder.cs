@@ -34,6 +34,8 @@ public class PlayerHolder
             return;
         }
 
+        SoundManager.Instance.PlaySfx("Click");
+
         var locationData = Global.Locations.GetData(location);
         var eventData = _events[CurrentTurn];
         var standardStatValue = GetStandardStatValue(CurrentTurn);
