@@ -2,8 +2,9 @@ public enum NPCType
 {
     Invalid = 0,
 
-    Sheep,
     Wolf,
+    Sheep,
     Girl,
     Boy,
+    Vampyr,
 }

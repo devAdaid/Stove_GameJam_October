@@ -1,21 +1,18 @@
 using UnityEngine;
 
-namespace AY.Core
+public abstract class PersistentSingleton<T> : MonoSingleton<T> where T : MonoBehaviour
 {
-    public abstract class PersistentSingleton<T> : MonoSingleton<T> where T : MonoBehaviour
+    protected virtual void Awake()
     {
-        protected virtual void Awake()
+        if (_instance == null)
         {
-            if (_instance == null)
-            {
-                _instance = this as T;
-            }
-            else if (_instance != this)
-            {
-                DestroyImmediate(gameObject);
-                return;
-            }
-            DontDestroyOnLoad(gameObject);
+            _instance = this as T;
         }
+        else if (_instance != this)
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
     }
 }

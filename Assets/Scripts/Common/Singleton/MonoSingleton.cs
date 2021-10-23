@@ -1,44 +1,41 @@
 using UnityEngine;
 
-namespace AY.Core
+public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
-    {
-        public static bool IsInitialized => _instance != null;
+    public static bool IsInitialized => _instance != null;
 
-        public static T Instance
+    public static T Instance
+    {
+        get
         {
-            get
+            if (_instance == null)
             {
+                _instance = FindObjectOfType<T>();
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<T>();
-                    if (_instance == null)
+                    T prefab = Resources.Load<T>("Prefabs/Singleton/" + typeof(T).ToString());
+                    if (prefab != null)
                     {
-                        T prefab = Resources.Load<T>("Prefabs/Singleton/" + typeof(T).ToString());
-                        if (prefab != null)
-                        {
-                            _instance = Instantiate(prefab) as T;
-                            _instance.name = typeof(T).ToString();
-                        }
-                        else
-                        {
-                            _instance = new GameObject(typeof(T).ToString(), typeof(T)).GetComponent<T>();
-                        }
+                        _instance = Instantiate(prefab) as T;
+                        _instance.name = typeof(T).ToString();
+                    }
+                    else
+                    {
+                        _instance = new GameObject(typeof(T).ToString(), typeof(T)).GetComponent<T>();
                     }
                 }
-
-                return _instance;
             }
+
+            return _instance;
         }
+    }
 
-        protected static T _instance = null;
+    protected static T _instance = null;
 
-        public void EchoForCreate() { }
+    public void EchoForCreate() { }
 
-        protected virtual void OnApplicationQuit()
-        {
-            _instance = null;
-        }
+    protected virtual void OnApplicationQuit()
+    {
+        _instance = null;
     }
 }

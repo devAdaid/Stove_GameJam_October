@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public static class EventStaticDataParser
 {
     #region Constants
-    private static readonly string FILE_PATH = "Data/Event.csv";
+    private static readonly string FILE_PATH = "Data/Event/Data_Event";
     private static readonly string ROW_ID = "EventId";
     private static readonly string ROW_DAY_RANGE = "DayRange";
     private static readonly string ROW_NPC = "NPC";
@@ -15,7 +15,7 @@ public static class EventStaticDataParser
     private static readonly string ROW_GROUP_OPTION2 = "Option2";
 
     private static readonly string ROW_OPTION_TEXT = "OptionText";
-    private static readonly string ROW_OPTION_SUCCESS_REACTION_TEXT = "SucessReactionText";
+    private static readonly string ROW_OPTION_SUCCESS_REACTION_TEXT = "SuccessReactionText";
     private static readonly string ROW_OPTION_FAIL_REACTION_TEXT = "FailReactionText";
     private static readonly string ROW_OPTION_STANDARD_STAT_TYPE = "StandardStatType";
     private static readonly string ROW_OPTION_RESULT_STAT_TYPE = "ResultStatType";
