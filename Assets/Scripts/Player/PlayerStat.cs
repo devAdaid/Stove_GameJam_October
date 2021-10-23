@@ -1,8 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public class PlayerStat
 {
     public readonly Dictionary<StatType, int> _stats;
+
+    public static readonly int SUM_GOOD_END = 14;
 
     public PlayerStat()
     {
@@ -28,6 +31,11 @@ public class PlayerStat
     public int GetStat(StatType stat)
     {
         return _stats[stat];
+    }
+
+    public int GetSum()
+    {
+        return _stats.Sum(x => x.Value);
     }
 
     public int AddStat(StatValue statValue)

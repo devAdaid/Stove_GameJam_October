@@ -10,4 +10,6 @@ public enum LocationType
     Park,
     Gym,
     Forest,
+
+    GoodEnd,
 }

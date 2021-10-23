@@ -12,6 +12,8 @@ public class LocationSelectUI : MonoBehaviour
     private GameObject _moonIcon;
     [SerializeField]
     private List<StatEntry> _statEntries;
+    [SerializeField]
+    private TMP_Text _statSumText;
 
     private static readonly StatType[] STATS = new StatType[]
     {
@@ -37,6 +39,7 @@ public class LocationSelectUI : MonoBehaviour
         _dayText.text = dayString;
         _sunIcon.SetActive(isDayTime);
         _moonIcon.SetActive(!isDayTime);
+        _statSumText.text = $"TOTAL: {Global.Player.Stat.GetSum()}/{PlayerStat.SUM_GOOD_END}";
 
         for (int i = 0; i < 6; i++)
         {

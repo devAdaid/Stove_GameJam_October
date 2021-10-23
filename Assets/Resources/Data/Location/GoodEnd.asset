@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c6c3a8ddc271454d9860b84c0ca33ee, type: 3}
-  m_Name: Location_Map
+  m_Name: GoodEnd
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 1
-  <DisplayName>k__BackingField: "\uD559\uAD50"
-  <BackgroundSprite>k__BackingField: {fileID: 21300000, guid: d39ab58b0234c42b7bb690f5842eab95, type: 3}
+  <Id>k__BackingField: 8
+  <DisplayName>k__BackingField: 
+  <BackgroundSprite>k__BackingField: {fileID: 0}
   <StatType>k__BackingField: 0
   <MonologueText>k__BackingField: []

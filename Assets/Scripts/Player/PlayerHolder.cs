@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
 public class PlayerHolder
 {
@@ -61,7 +60,14 @@ public class PlayerHolder
 
     private void OnGameEnd()
     {
-        SceneManager.LoadScene("3_End");
+        if (Stat.GetSum() >= PlayerStat.SUM_GOOD_END)
+        {
+            var goodEndContext = new VisualNovelGoodEndContext(Global.API, Global.UI);
+        }
+        else
+        {
+            var badEndContext = new VisualNovelBadEndContext(Global.API, Global.UI);
+        }
     }
 
     private static int GetStandardStatValue(int turn)
