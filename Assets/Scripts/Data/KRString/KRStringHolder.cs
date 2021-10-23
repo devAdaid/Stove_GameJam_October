@@ -43,4 +43,37 @@ public class KRStringHolder
 
         return string.Format(GetString(STAT_DOWN_FORMAT), statData.DisplayName);
     }
+
+    public List<string> GetIntroStrings()
+    {
+        var result = new List<string>();
+        result.Add(GetString("Intro_1"));
+        result.Add(GetString("Intro_2"));
+        result.Add(GetString("Intro_3"));
+        result.Add(GetString("Intro_4"));
+        result.Add(GetString("Intro_5"));
+        return result;
+    }
+
+    public List<string> GetGoodEndStrings()
+    {
+        var result = new List<string>();
+        result.Add(GetString("GoodEnd_1"));
+        result.Add(GetString("GoodEnd_2"));
+        result.Add(GetString("GoodEnd_3"));
+        result.Add(GetString("GoodEnd_4"));
+        result.Add(GetString("GoodEnd_5"));
+        return result;
+    }
+
+    public List<string> GetBadEndStrings()
+    {
+        var result = new List<string>();
+        result.Add(GetString("BadEnd_1"));
+        result.Add(GetString("BadEnd_2"));
+        result.Add(GetString("BadEnd_3"));
+        result.Add(GetString("BadEnd_4"));
+        result.Add(GetString("BadEnd_5"));
+        return result;
+    }
 }

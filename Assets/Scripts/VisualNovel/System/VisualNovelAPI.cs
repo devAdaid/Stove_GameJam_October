@@ -12,9 +12,9 @@ public class VisualNovelAPI : IVisualNovelAPI
     private bool _isNPCStandingVisible = false;
 
     private VisualNovelUIControl ui => VisualNovelUIControl.Instance;
-    private VisualNovelContext context;
+    private IVisualNovelContext context;
 
-    public VisualNovelAPI(VisualNovelContext novelContext)
+    public VisualNovelAPI(IVisualNovelContext novelContext)
     {
         context = novelContext;
 
@@ -23,7 +23,7 @@ public class VisualNovelAPI : IVisualNovelAPI
         ui.Option2Button.onClick.AddListener(() => SelectOption(2));
     }
 
-    public void SetContext(VisualNovelContext novelContext)
+    public void SetContext(IVisualNovelContext novelContext)
     {
         context = novelContext;
     }

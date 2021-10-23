@@ -11,7 +11,7 @@ public enum VisualNovelSequenceGroupType
     EventEnd,
 }
 
-public class VisualNovelContext
+public class VisualNovelContext : IVisualNovelContext
 {
     private readonly List<IVisualNovelSequence> _locationSequence;
     private readonly List<IVisualNovelSequence> _eventStartSequence;

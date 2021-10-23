@@ -24,7 +24,8 @@ public class VisualNovelUIControl : MonoSingleton<VisualNovelUIControl>
 
     void Awake()
     {
-        //BackgroundImage.gameObject.SetActive(false);
+        LocationSelectUI.gameObject.SetActive(false);
+        BackgroundImage.gameObject.SetActive(false);
         InputBlockButton.gameObject.SetActive(false);
         NPCStandingRoot.SetActive(false);
         NamePlateRoot.SetActive(false);
