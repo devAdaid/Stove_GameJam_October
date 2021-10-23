@@ -22,10 +22,10 @@ public class Sequence_ChangeBackground : VisualNovelSequence
         {
             if (!_api.IsBackgroundVisible)
             {
-                var locationData = Global.Locations.GetData(_location);
                 _api.ShowBackground();
-                _api.SetBackground(locationData.BackgroundSprite);
             }
+            var locationData = Global.Locations.GetData(_location);
+            _api.SetBackground(locationData.BackgroundSprite);
         }
     }
 }

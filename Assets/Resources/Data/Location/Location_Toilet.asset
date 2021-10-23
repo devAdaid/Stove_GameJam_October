@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Id>k__BackingField: 2
   <DisplayName>k__BackingField: "\uD654\uC7A5\uC2E4"
-  <BackgroundSprite>k__BackingField: {fileID: 0}
+  <BackgroundSprite>k__BackingField: {fileID: 21300000, guid: 003e05500f2754810b5d536fd73cfbd0, type: 3}
   <StatType>k__BackingField: 1
   <MonologueText>k__BackingField:
   - "\uD654\uC7A5\uC2E4\uC5D0\uC11C \uCD94\uB9AC\uB97C \uD558\uAE30 \uC2DC\uC791\uD588\uB2E4.

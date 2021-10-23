@@ -21,7 +21,7 @@ public class VisualNovelUIControl : MonoBehaviour
 
     void Awake()
     {
-        BackgroundImage.gameObject.SetActive(false);
+        //BackgroundImage.gameObject.SetActive(false);
         NPCStandingRoot.SetActive(false);
         NamePlateRoot.SetActive(false);
         TextWindowRoot.SetActive(false);
