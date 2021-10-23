@@ -35,4 +35,8 @@ public interface IVisualNovelAPI
     void SelectOption(int option);
 
     void SetInputBlockerEnable(bool enable);
+
+    void UpdateSimpleStats();
+    void ShowSimpleStats();
+    void HideSimpleStats();
 }

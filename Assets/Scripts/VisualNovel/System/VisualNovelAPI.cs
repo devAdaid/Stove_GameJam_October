@@ -65,6 +65,7 @@ public class VisualNovelAPI : IVisualNovelAPI
     public void ApplyResultStat(StatValue statValue)
     {
         Global.Player.Stat.AddStat(statValue);
+        UpdateSimpleStats();
     }
 
     public int GetCurrentStatValue(StatType stat)
@@ -169,5 +170,37 @@ public class VisualNovelAPI : IVisualNovelAPI
     public void SetInputBlockerEnable(bool enable)
     {
         ui.InputBlockButton.gameObject.SetActive(enable);
+    }
+
+
+    private static readonly StatType[] STATS = new StatType[]
+    {
+        StatType.Action,
+        StatType.Horror,
+        StatType.Detective,
+        StatType.Romance,
+        StatType.OrientalFantasy,
+        StatType.Fantasy,
+    };
+
+    public void UpdateSimpleStats()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            var data = Global.Stats.GetData(STATS[i]);
+            var value = Global.Player.Stat.GetStat(STATS[i]);
+            ui.StatEntries[i].SetEntry(data.IconSprite, data.DisplayName, value);
+        }
+    }
+
+    public void ShowSimpleStats()
+    {
+        ui.SimpleStatRoot.SetActive(true);
+        UpdateSimpleStats();
+    }
+
+    public void HideSimpleStats()
+    {
+        ui.SimpleStatRoot.SetActive(false);
     }
 }

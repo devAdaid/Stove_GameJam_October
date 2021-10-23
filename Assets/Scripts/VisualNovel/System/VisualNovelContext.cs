@@ -40,6 +40,7 @@ public class VisualNovelContext : IVisualNovelContext
 
         _api.SetInputBlockerEnable(true);
         _api.HideLocationSelectUI();
+        _api.ShowSimpleStats();
 
         _locationSequence = new List<IVisualNovelSequence>();
         _eventStartSequence = new List<IVisualNovelSequence>();
@@ -218,6 +219,7 @@ public class VisualNovelContext : IVisualNovelContext
         _api.SetBackground(mapSprite);
         _api.HideNPCStanding();
         _api.HideTextWindow();
+        _api.HideSimpleStats();
 
         _api.SetInputBlockerEnable(false);
         _api.ShowLocationSelectUI();
