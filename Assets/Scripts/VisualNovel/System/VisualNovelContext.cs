@@ -129,7 +129,11 @@ public class VisualNovelContext
             _locationSequence.Add(new Sequence_MonologueText(_api, text));
         }
 
-        _locationSequence.Add(new Sequence_AddStat(_api, new StatValue(locationData.StatType, 1)));
+        var statValue = new StatValue(locationData.StatType, 1);
+        _locationSequence.Add(new Sequence_AddStat(_api, statValue));
+
+        var statString = Global.KRStrings.GetStatChangeString(statValue);
+        _locationSequence.Add(new Sequence_MonologueText(_api, statString));
     }
 
     private void MakeEventSequences(EventStaticDataRecord eventData)
@@ -153,11 +157,15 @@ public class VisualNovelContext
         successList.Add(new Sequence_ChangeNPCStanding(_api, npc, EmotionType.Positive));
         successList.Add(new Sequence_NPCDialogueText(_api, npc, optionData.SucessReactionText));
         successList.Add(new Sequence_AddStat(_api, optionData.SuccessResultStatValue));
+        var statString = Global.KRStrings.GetStatChangeString(optionData.SuccessResultStatValue);
+        successList.Add(new Sequence_MonologueText(_api, statString));
 
         // Fail
         failList.Add(new Sequence_ChangeNPCStanding(_api, npc, EmotionType.Negative));
         failList.Add(new Sequence_NPCDialogueText(_api, npc, optionData.FailReactionText));
         failList.Add(new Sequence_AddStat(_api, optionData.FailResultStatValue));
+        statString = Global.KRStrings.GetStatChangeString(optionData.FailResultStatValue);
+        failList.Add(new Sequence_MonologueText(_api, statString));
     }
 
     private void ExecuteUntilWatingSequence()

@@ -1,18 +1,15 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LocationSelectUI : MonoBehaviour
 {
     [SerializeField]
     private TMP_Text _dayText;
     [SerializeField]
-    private Image _icon;
+    private GameObject _sunIcon;
     [SerializeField]
-    private Sprite _sunIcon;
-    [SerializeField]
-    private Sprite _moonIcon;
+    private GameObject _moonIcon;
     [SerializeField]
     private List<StatEntry> _statEntries;
 
@@ -38,7 +35,8 @@ public class LocationSelectUI : MonoBehaviour
         var isDayTime = (currentTurn % 2) == 0;
         var dayString = string.Format(Global.KRStrings.GetString(KRStringHolder.DAY_FORMAT), day);
         _dayText.text = dayString;
-        _icon.sprite = isDayTime ? _sunIcon : _moonIcon;
+        _sunIcon.SetActive(isDayTime);
+        _moonIcon.SetActive(!isDayTime);
 
         for (int i = 0; i < 6; i++)
         {

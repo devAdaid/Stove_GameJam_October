@@ -3,8 +3,5 @@ DayFormat,{0}일
 DayTime,낮
 Night,밤
 Action,액션
-Horror,호러
-Detective,추리
-Romance,로맨스
-OrientalFantasy,무협
-Fantasy,판타지
+StatUpFormat,{0} 영감이 올랐다!
+StatDownFormat,{0} 영감이 떨어졌다...

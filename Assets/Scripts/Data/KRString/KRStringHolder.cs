@@ -8,6 +8,8 @@ public class KRStringHolder
     public static readonly string DAY_FORMAT = "DayFormat";
     public static readonly string DAY_TIME = "DayTime";
     public static readonly string NIGHT = "Night";
+    public static readonly string STAT_UP_FORMAT = "StatUpFormat";
+    public static readonly string STAT_DOWN_FORMAT = "StatDownFormat";
     #endregion
 
     public KRStringHolder()
@@ -31,12 +33,14 @@ public class KRStringHolder
         return string.Empty;
     }
 
-    public string GetString(StatType statType)
+    public string GetStatChangeString(StatValue statValue)
     {
-        if (_stringPair.TryGetValue(statType.ToString(), out var val))
+        var statData = Global.Stats.GetData(statValue.StatType);
+        if (statValue.Value > 0)
         {
-            return val;
+            return string.Format(GetString(STAT_UP_FORMAT), statData.DisplayName);
         }
-        return string.Empty;
+
+        return string.Format(GetString(STAT_DOWN_FORMAT), statData.DisplayName);
     }
 }
