@@ -12,4 +12,6 @@ public enum LocationType
     Forest,
 
     GoodEnd,
+
+    Map_Night,
 }

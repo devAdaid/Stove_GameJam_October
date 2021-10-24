@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public enum VisualNovelSequenceGroupType
 {
@@ -224,8 +225,18 @@ public class VisualNovelContext : IVisualNovelContext
 
     private void OnEnd()
     {
-        var mapSprite = Global.Locations.GetData(LocationType.Map).BackgroundSprite;
+        Sprite mapSprite = null;
+        var isDayTime = (Global.Player.CurrentTurn % 2) == 1;
+        if (isDayTime)
+        {
+            mapSprite = Global.Locations.GetData(LocationType.Map).BackgroundSprite;
+        }
+        else
+        {
+            mapSprite = Global.Locations.GetData(LocationType.Map_Night).BackgroundSprite;
+        }
         _api.SetBackground(mapSprite);
+
         _api.HideNPCStanding();
         _api.HideTextWindow();
         _api.HideSimpleStats();

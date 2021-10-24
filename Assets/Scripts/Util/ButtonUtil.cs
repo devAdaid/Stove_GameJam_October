@@ -21,4 +21,9 @@ public class ButtonUtil : MonoBehaviour
     {
         SoundManager.Instance.PlaySfx("Click");
     }
+
+    public void ResetPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
