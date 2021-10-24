@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 public class VisualNovelIntroContext : IVisualNovelContext
@@ -6,7 +5,6 @@ public class VisualNovelIntroContext : IVisualNovelContext
     private readonly List<IVisualNovelSequence> _sequence;
     private int _currentSequenceIndex;
     private readonly VisualNovelAPI _api;
-    private readonly Action _onEnd;
 
     public VisualNovelIntroContext(VisualNovelAPI api, VisualNovelUIControl uiControl)
     {
@@ -69,7 +67,7 @@ public class VisualNovelIntroContext : IVisualNovelContext
         _api.ShowLocationSelectUI();
         _api.UpdateLocationSelectUI();
 
-        _onEnd?.Invoke();
+        TutorialUI.Instance.TryShowPlayTutorial();
     }
 
     public bool CanSelectOption()

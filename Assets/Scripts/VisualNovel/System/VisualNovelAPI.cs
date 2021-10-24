@@ -159,6 +159,8 @@ public class VisualNovelAPI : IVisualNovelAPI
         buttonSequence.Play();
         ui.Option1Text.text = option1;
         ui.Option2Text.text = option2;
+
+        TutorialUI.Instance.TryShowSelectTutorial();
     }
 
     public void ShowLocationSelectUI()
