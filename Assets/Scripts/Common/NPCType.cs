@@ -7,4 +7,6 @@ public enum NPCType
     Girl,
     Boy,
     Vampyr,
+
+    Missing,
 }

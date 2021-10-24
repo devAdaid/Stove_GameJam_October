@@ -13,4 +13,14 @@ public class NPCStaticDataRecord : ScriptableObject
     public Sprite StandingSprite_Positive { get; private set; }
     [field: SerializeField]
     public Sprite StandingSprite_Negative { get; private set; }
+    [field: SerializeField]
+    public Sprite ProfileSprite { get; private set; }
+    [field: SerializeField]
+    public Sprite FullSprite_Idle { get; private set; }
+    [field: SerializeField]
+    public Sprite FullSprite_Positive { get; private set; }
+    [field: SerializeField]
+    public Sprite FullSprite_Negative { get; private set; }
+    [field: SerializeField]
+    public string IdeaGiver { get; private set; }
 }

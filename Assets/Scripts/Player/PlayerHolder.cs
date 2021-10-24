@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerHolder
 {
@@ -65,6 +66,11 @@ public class PlayerHolder
         if (Stat.GetSum() >= PlayerStat.SUM_GOOD_END)
         {
             var goodEndContext = new VisualNovelGoodEndContext(Global.API, Global.UI);
+            if (!PlayerPrefs.HasKey("Clear"))
+            {
+                PlayerPrefs.SetInt("Clear", 0);
+                PlayerPrefs.Save();
+            }
         }
         else
         {

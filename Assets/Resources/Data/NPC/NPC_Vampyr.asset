@@ -17,3 +17,8 @@ MonoBehaviour:
   <StandingSprite_Idle>k__BackingField: {fileID: 21300000, guid: 3c6e87f004e0b4a4c9815119354f1083, type: 3}
   <StandingSprite_Positive>k__BackingField: {fileID: 21300000, guid: 2ae9dd81b77b84915a1e9d8af5690015, type: 3}
   <StandingSprite_Negative>k__BackingField: {fileID: 21300000, guid: e0ab8f7bad7714e57aba7a613cef77bc, type: 3}
+  <ProfileSprite>k__BackingField: {fileID: 21300000, guid: 55aea90c4bf5f462da86fa6d43bbf63a, type: 3}
+  <FullSprite_Idle>k__BackingField: {fileID: 21300000, guid: b4f913d278af14af98a0ab6972495132, type: 3}
+  <FullSprite_Positive>k__BackingField: {fileID: 21300000, guid: 91f3c9418f1774b1f8550dac54c92a31, type: 3}
+  <FullSprite_Negative>k__BackingField: {fileID: 21300000, guid: 161dbf75e98da4b368ff02ee9a322b97, type: 3}
+  <IdeaGiver>k__BackingField: "\uC774\uC815\uD654"
